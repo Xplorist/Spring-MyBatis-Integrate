@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.xplorist.mapper.TestMapper">
 	 
 	<!-- 注釋模板，放在最後一行 -->
 	<select id="queryResultList" resultType="com.xplorist.model.Result">
 		select * from AA_TEST_MAIN
 	</select>
+	
+	<!-- 注釋模板，放在最後一行 -->
+	<select id="listAllUser" resultType="com.xplorist.entity.User">
+		select * from AA_USER
+	</select>
+	
+	<!-- 注釋模板，放在最後一行 -->
+	<insert id="addUser" parameterType="com.xplorist.entity.User">
+	   	insert into AA_USER (id, username, password) values (#{id}, #{username}, #{password})
+	</insert>
 	
 	<!-- 注釋模板，放在最後一行 -->
 	 
